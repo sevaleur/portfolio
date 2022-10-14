@@ -1,9 +1,7 @@
 import gsap from 'gsap'
 
 import Exp from '../Exp.js'
-
 import Top_Exp from './home/Top_Exp.js'
-import Lab_Exp from './lab/Lab_Exp.js'
 
 export default class World
 {
@@ -16,16 +14,12 @@ export default class World
         this.sizes = this.exp.sizes
 
         this.top_exp = new Top_Exp()
-        this.lab_exp = new Lab_Exp()
     }
 
     resize()
     {
         if(this.top_exp)
             this.top_exp.resize()
-
-        if(this.lab_exp)
-            this.lab_exp.resize()
     }
 
     update()
@@ -46,17 +40,10 @@ export default class World
                 if(this.scroll.uniform_scroll >= 1)
                 {
                     this.top_exp.pause()
-
-                    if(this.lab_exp)
-                    {
-                        this.lab_exp.play()
-                        this.lab_exp.update()
-                    }
                 }
                 else 
                 {
                     this.top_exp.play()
-                    this.lab_exp.pause()
                 }
             }
         }

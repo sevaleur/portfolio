@@ -11,7 +11,7 @@ void main()
 
     float dist = distance(uv, vec2(0.5));
 
-    new_pos.z += u_wave * .05 *sin(dist*10. + u_time);
+    new_pos.z += u_wave * 20. *sin(dist*10. + u_time);
 
     gl_Position = projectionMatrix * modelViewMatrix * vec4(new_pos, 1.0);
 

@@ -1,4 +1,5 @@
 import * as THREE from 'three'
+import gsap from 'gsap'
 
 import Exp from '../../Exp.js'
 
@@ -29,10 +30,7 @@ export default class Top_Exp
         window.addEventListener('mousemove', (e) => 
         {
             this.mouse.x = (e.clientX / window.innerWidth) * 2 - 1
-            this.mouse.y = -(e.clientY / window.innerHeight) * 2 - 1
-
-            if(this.isPlaying)
-                this.mat.uniforms.u_mouse.value = this.mouse
+            this.mouse.y = -(e.clientY / window.innerHeight * 2 - 1)
         })
     }
 
@@ -90,6 +88,8 @@ export default class Top_Exp
             return
         
         this.clock += 0.05
-        this.mat.uniforms.u_time.value = this.clock
+        this.mat.uniforms.u_time.value = this.time.elapsed / 300
+
+        gsap.to(this.mat.uniforms.u_mouse.value, {x: this.mouse.x, y: this.mouse.y, duration: 3})
     }
 }

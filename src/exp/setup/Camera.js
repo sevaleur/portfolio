@@ -27,14 +27,13 @@ export default class Camera
         this.instance_ortho.position.set(0., 0., 2.)
         this.scene_one.add(this.instance_ortho)
 
-        this.z = 2
         this.instance_persp = new THREE.PerspectiveCamera(
-            75,
+            2 * Math.atan((this.sizes.height / 2) / 600) * (180 / Math.PI),
             this.sizes.width / this.sizes.height, 
             0.1, 
-            100
+            1000
         )
-        this.instance_persp.position.set(0, 0, 2)
+        this.instance_persp.position.set(0, 0, 600)
         this.scene_two.add(this.instance_persp)
     }
 

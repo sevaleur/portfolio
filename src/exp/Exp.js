@@ -64,7 +64,6 @@ export default class Exp
     {
         if(this.world)
             this.world.update()
-
             
         this.renderer.update()
     }

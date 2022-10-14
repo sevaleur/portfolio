@@ -47,10 +47,10 @@ float sin_noise(vec3 p)
 float scene(vec3 p)
 {
     vec3 p1 = rotate(p, vec3(0., 1., 1.), u_time * 0.02);
-    vec3 p_1 = rotate(p, vec3(1., 1., 1.), 1.3);
+    vec3 p_1 = rotate(p, vec3(1., 1., 1.), 1.3 + (u_time * 0.05));
     float scale = 200. + 10. * sin(6.); 
     float main = max(sdBox(p_1, vec3(.125, .125, .125) - vec3(u_scroll)), (sin_noise(p1 * scale)) / scale);
-    float mouse_sphere = sdSphere(p - vec3(0., 2., 0.) - vec3(u_mouse, .0), 0.0002 - u_scroll);
+    float mouse_sphere = sdSphere(p - vec3(0., 0., 0.) - vec3(u_mouse, .0), 0.0002 - u_scroll);
     return smin(main, mouse_sphere, 0.05);
 }
 
