@@ -3,7 +3,7 @@ import * as THREE from 'three'
 import Sizes from './utils/Sizes.js'
 import Time from './utils/Time.js'
 import Resources from './utils/Resources.js'
-import Scroll from './utils/Scroll.js'
+import Mouse from './utils/Mouse.js'
 
 import _sources from './data/sources.js'
 
@@ -11,7 +11,7 @@ import Camera from './setup/Camera.js'
 import Renderer from './setup/Renderer.js'
 
 import World from './world/World.js'
-import Animations from './animations/Animations.js'
+import PageTransitions from './animations/PageTransitions.js'
 
 export default class Exp 
 {
@@ -30,7 +30,7 @@ export default class Exp
         this.sizes = new Sizes()
         this.time = new Time()
         this.resources = new Resources(_sources)
-        this.scroll = new Scroll()
+        this.mouse = new Mouse()
         this.scene_one = new THREE.Scene()
         this.scene_two = new THREE.Scene()
         this.camera = new Camera()
@@ -39,7 +39,7 @@ export default class Exp
         this.resources.on('loaded', () => 
         {
             this.world = new World()
-            this.animations = new Animations()
+            this.pageTransitions = new PageTransitions()
         })
 
         this.sizes.on('resize', () =>

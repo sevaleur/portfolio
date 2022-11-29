@@ -33,7 +33,9 @@ export default class Camera
             0.1, 
             1000
         )
-        this.instance_persp.position.set(0, 0, 600)
+
+        this.sizes.mobile ? this.instance_persp.position.set(0, 0, 900) : this.instance_persp.position.set(0, 0, 600)
+
         this.scene_two.add(this.instance_persp)
     }
 
@@ -52,6 +54,6 @@ export default class Camera
 
     update()
     {
-        this.instance_persp.position.y = - this.scroll.scrollY / this.sizes.height * 350
+        
     }
 }

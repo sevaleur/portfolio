@@ -11,7 +11,7 @@ export default class Resources extends EventEmitter
 
         this.sources = _sources 
         this.items = {}
-
+        
         this.loaded = 0
         this.to_load = this.sources.length 
 

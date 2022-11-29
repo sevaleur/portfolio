@@ -6,7 +6,7 @@ import Exp from '../../Exp.js'
 import vertex from './shaders/vertex.glsl'
 import fragment from './shaders/fragment.glsl'
 
-export default class Top_Exp
+export default class Home
 {
     constructor()
     {
@@ -15,23 +15,12 @@ export default class Top_Exp
         this.time = this.exp.time
         this.sizes = this.exp.sizes
         this.camera = this.exp.camera
+        this.mouse = this.exp.mouse
         
-        this.clock = 0
         this.isPlaying = true
 
-        this.mouseEvents()
         this.setObj()
         this.resize()
-    }
-
-    mouseEvents()
-    {
-        this.mouse = new THREE.Vector2()
-        window.addEventListener('mousemove', (e) => 
-        {
-            this.mouse.x = (e.clientX / window.innerWidth) * 2 - 1
-            this.mouse.y = -(e.clientY / window.innerHeight * 2 - 1)
-        })
     }
 
     setObj()
@@ -46,15 +35,21 @@ export default class Top_Exp
                 u_time: { value: 0.0 },
                 u_scale: { value: new THREE.Vector2(1, 1) },
                 u_mouse: { value: new THREE.Vector2(0., 0.) },
-                u_scroll: { value: 0.0 }
+                u_size: { value: 0.0 }
             },
-            visible: true
         })
         this.shaderScale = this.mat.uniforms.u_scale.value
 
         this.obj = new THREE.Mesh(this.geo, this.mat)
 
         this.scene.add(this.obj)
+    }
+    
+    delete()
+    {
+        this.scene.remove(this.obj)
+        this.obj.material.dispose()
+        this.obj.geometry.dispose()
     }
 
     pause()
@@ -87,9 +82,8 @@ export default class Top_Exp
         if(!this.isPlaying)
             return
         
-        this.clock += 0.05
         this.mat.uniforms.u_time.value = this.time.elapsed / 300
 
-        gsap.to(this.mat.uniforms.u_mouse.value, {x: this.mouse.x, y: this.mouse.y, duration: 3})
+        gsap.to(this.mat.uniforms.u_mouse.value, {x: this.mouse.mouse_coord.x, y: this.mouse.mouse_coord.y, duration: 5, ease: 'linear'})
     }
 }

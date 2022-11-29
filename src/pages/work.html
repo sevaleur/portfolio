@@ -6,20 +6,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&family=Orbitron:wght@400;500;600;700;800;900&family=Philosopher&family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300&family=Silkscreen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@0;1&display=swap" rel="stylesheet">
     <title>Sune Valeur | Creative Developer</title>
 </head>
 <body data-barba="wrapper">
     <div class="transition"></div>
-    <div data-barba="container" data-namespace="home">
-        <header class="hero">
+    <div class="work" data-barba="container" data-namespace="work">
+        <header class="pages_header">
             <nav>
-                <a href="index.html" class="active">sunevaleur</a>
+                <a href="index.html" class="white">sunevaleur</a>
                 <ul>
-                    <li><a href="work.html">.work</a></li>
-                    <li><a href="about.html">.about</a></li>
+                    <li><a href="work.html" class="active white">.work</a></li>
+                    <li><a href="about.html" class="white">.about</a></li>
                 </ul>
             </nav>
-            <div class="social">
+        </header>
+        <main>
+            <div id="title">
+                <h1>
+                    featured work.
+                </h1>
+            </div>
+            <div class="social black">
                 <div class="github">
                     <a href="https://github.com/sevaleur" target="_blank">
                         <img src="/static/icons/github.svg" alt="github">
@@ -31,27 +39,12 @@
                     </a>
                 </div>
                 <div class="mail">
-                    <a href="#">
+                    <a href="#" target="_blank">
                         <img src="/static/icons/mail.svg" alt="e-mail">
                     </a>
                 </div>
             </div>
-            <div id="title">
-                <h1 class="l_title">
-                    creative developer
-                </h1> 
-            </div>
-            <!-- <div class="subline">
-                <div class="subline_r">
-                    <p class="flip top">redefine</p>
-                    <p class="flip top">the box</p>
-                    <hr class="top_t">
-                    <hr class="top_b">
-                    <p class="top_l">the box</p>
-                    <p class="top_l">redefine</p>
-                </div>
-            </div> -->
-        </header>
+        </main>
     </div>
     <canvas class="webgl"></canvas>
 </body>

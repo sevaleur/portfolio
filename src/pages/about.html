@@ -10,15 +10,22 @@
 </head>
 <body data-barba="wrapper">
     <div class="transition"></div>
-    <div data-barba="container" data-namespace="home">
-        <header class="hero">
+    <div data-barba="container" data-namespace="about">
+        <header class="pages_header">
             <nav>
-                <a href="index.html" class="active">sunevaleur</a>
+                <a href="index.html" class="_about">sunevaleur</a>
                 <ul>
                     <li><a href="work.html">.work</a></li>
-                    <li><a href="about.html">.about</a></li>
+                    <li><a href="about.html" class="active">.about</a></li>
                 </ul>
             </nav>
+        </header>
+        <main>
+            <div id="title">
+                <h1>
+                    about
+                </h1>
+            </div>
             <div class="social">
                 <div class="github">
                     <a href="https://github.com/sevaleur" target="_blank">
@@ -31,27 +38,22 @@
                     </a>
                 </div>
                 <div class="mail">
-                    <a href="#">
+                    <a href="#" target="_blank">
                         <img src="/static/icons/mail.svg" alt="e-mail">
                     </a>
                 </div>
             </div>
-            <div id="title">
-                <h1 class="l_title">
-                    creative developer
-                </h1> 
+            <div class="desc">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam molestias sunt doloribus laboriosam voluptates ea blanditiis tenetur nihil similique vero?
+                </p>
             </div>
-            <!-- <div class="subline">
-                <div class="subline_r">
-                    <p class="flip top">redefine</p>
-                    <p class="flip top">the box</p>
-                    <hr class="top_t">
-                    <hr class="top_b">
-                    <p class="top_l">the box</p>
-                    <p class="top_l">redefine</p>
-                </div>
-            </div> -->
-        </header>
+            <div class="desc_two">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam molestias sunt doloribus laboriosam voluptates ea blanditiis tenetur nihil similique vero?
+                </p>
+            </div>
+        </main>
     </div>
     <canvas class="webgl"></canvas>
 </body>

@@ -20,8 +20,19 @@ module.exports = {
             ]
         }),
         new HtmlWebpackPlugin({
+            inject: 'body',
             filename: 'index.html',
             template: path.resolve(__dirname, '../src/index.html'),
+            minify: true
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'work.html',
+            template: path.resolve(__dirname, '../src/pages/work.html'),
+            minify: true
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'about.html',
+            template: path.resolve(__dirname, '../src/pages/about.html'),
             minify: true
         }),
         new MiniCSSExtractPlugin()

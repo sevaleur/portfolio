@@ -11,7 +11,7 @@ export default class Renderer
         this.scene_one = this.exp.scene_one
         this.scene_two = this.exp.scene_two 
         this.sizes = this.exp.sizes
-        this.scroll = this.exp.scroll
+        this.location = true
 
         this.setInstance()
     }
@@ -21,11 +21,11 @@ export default class Renderer
         this.instance = new THREE.WebGLRenderer({
             canvas: this.canvas,
             antialias: true,
-            alpha: true
         })
         this.instance.outputEncoding = THREE.sRGBEncoding
         this.instance.setSize(this.sizes.width, this.sizes.height)
         this.instance.setPixelRatio(this.sizes.pixel_ratio)
+        this.instance.setClearColor('#232323')
     }
 
     resize()
@@ -36,7 +36,7 @@ export default class Renderer
 
     update()
     {
-        if(this.scroll.uniform_scroll >= 0 && this.scroll.uniform_scroll <= 1)
+        if(this.location)
         {
             this.instance.render(this.scene_one, this.camera.instance_ortho)
         }
