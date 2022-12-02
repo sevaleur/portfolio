@@ -16,8 +16,6 @@ export default class Home
         this.sizes = this.exp.sizes
         this.camera = this.exp.camera
         this.mouse = this.exp.mouse
-        
-        this.isPlaying = true
 
         this.setObj()
         this.resize()
@@ -52,16 +50,6 @@ export default class Home
         this.obj.geometry.dispose()
     }
 
-    pause()
-    {
-        this.isPlaying = false
-    }
-
-    play()
-    {
-        this.isPlaying = true
-    }
-
     resize()
     {
         this.image_aspect = 1.77
@@ -78,10 +66,7 @@ export default class Home
     }
 
     update()
-    {
-        if(!this.isPlaying)
-            return
-        
+    {        
         this.mat.uniforms.u_time.value = this.time.elapsed / 300
 
         gsap.to(this.mat.uniforms.u_mouse.value, {x: this.mouse.mouse_coord.x, y: this.mouse.mouse_coord.y, duration: 5, ease: 'linear'})

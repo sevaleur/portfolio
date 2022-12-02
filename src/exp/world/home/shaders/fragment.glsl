@@ -41,23 +41,18 @@ float sdSphere(vec3 p, float r)
     return length(p)-r;
 }
 
-float sin_noise(vec3 p)
-{
-    return 12. - (sin(p.x) + sin(p.y) + sin(p.z)) / 12.; 
-}
-
-/* float small_noise(vec3 p)
+float noise(vec3 p)
 {
     return 8. - (sin(p.x) + cos(p.y) + sin(p.z)) / .8; 
-} */
+}
 
 float scene(vec3 p)
 {
     vec3 p1 = rotate(p, vec3(1., 1., 1.), 1.3 + (u_time * 0.05));
     float scale = 200. + 10. * sin(6.); 
-    float main = max(sdBox(p1, vec3(.125, .125, .125) - vec3(u_size)), (sin_noise(p1 * scale)) / scale);
+    float main = max(sdBox(p1, vec3(.125, .125, .125) - vec3(u_size)), (noise(p1 * scale)) / scale);
     float mouse_sphere = sdSphere(p - vec3(0., 0., 0.) - vec3(u_mouse, .0), 0.0002 - u_size);
-    return smin(main, mouse_sphere, 0.05);
+    return smin(main, mouse_sphere, 0.03);
 }
 
 vec3 getNormal(vec3 p){
@@ -86,7 +81,7 @@ void main()
 
     vec2 point = new_uv - vec2(0.5); 
 
-    vec3 cam_pos = vec3(0., -0.5, 2.);
+    vec3 cam_pos = vec3(0., -.45, 2.);
     vec3 ray = normalize(vec3(point, -1.0));
     vec3 ray_pos = cam_pos; 
 

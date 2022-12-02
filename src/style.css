@@ -78,7 +78,7 @@ body
     pointer-events: none;
     list-style: none;
     transform: scaleY(0);
-    background: #232323;
+    background: rgb(96, 17, 17);
 }
 
 .transition li 
@@ -186,17 +186,34 @@ header nav a:hover
     left: 0; 
     color: #ced1d3; 
     letter-spacing: 5px;
-    font-size: 1rem;
-    text-decoration: none;
+    font-size: .8rem;
     font-weight: 300;
     mix-blend-mode: difference;
+}
+
+.redefine 
+{
+    grid-area: 3 / 1 / -1 / 2;
+    align-self: flex-end;
+    justify-self: flex-start;
+    padding: 0 2%; 
+}
+
+.redefine p 
+{
+    color: #ced1d3; 
+    letter-spacing: 3px;
+    font-size: .8rem;
+    font-weight: 300;
+    mix-blend-mode: difference;
+    padding: 0 10px; 
 }
 
 .social
 {
     grid-area: 3 / 3 / -1 / -1;
     height: 60%; 
-    align-self: center;
+    align-self: flex-start;
     justify-self: flex-end;
     overflow: hidden;
     padding: 0 2%;
