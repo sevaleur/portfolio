@@ -1,0 +1,26 @@
+@font-face {
+  font-family: $font-josefin;
+  src: url('../fonts/Josefin.woff2') format('woff2'),
+      url('../fonts/Josefin.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-italiana;
+  src: url('../fonts/Italiana.woff2') format('woff2'),
+      url('../fonts/Italiana.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-nohemi;
+  src: url('../fonts/Nohemi.woff2') format('woff2'),
+      url('../fonts/Nohemi.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

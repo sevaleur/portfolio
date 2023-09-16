@@ -1,0 +1,96 @@
+.home
+{
+  height: 100%;
+  width: 100%;
+  z-index: z('content');
+
+
+  &__title
+  {
+    position: absolute;
+    left: 4rem;
+    top: 4rem;
+
+    &__text
+    {
+      @extend %title-25;
+      @extend %link__center--hidden;
+
+      opacity: 0;
+    }
+  }
+
+  &__sub
+  {
+    position: absolute;
+    right: 4rem;
+    top: 4rem;
+
+    font-size: 3rem;
+
+    &__title
+    {
+      @extend %title-25;
+
+      opacity: 0;
+    }
+  }
+
+  &__hook
+  {
+    position: absolute;
+    left: 60%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    letter-spacing: 0.5rem;
+
+    @include media('<=tablet')
+    {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &__title
+    {
+      @extend %desc-30;
+
+      opacity: 0;
+    }
+  }
+
+  &__idea
+  {
+    position: absolute;
+
+    right: 4rem;
+    bottom: 4rem;
+
+    &__text
+    {
+      @extend %desc-20;
+      @extend %link__center;
+
+      padding: 1rem 0;
+      opacity: 0;
+    }
+  }
+
+  &__construction
+  {
+    @extend %desc-20;
+
+    position: absolute;
+    bottom: 4rem;
+    left: 4rem;
+
+    writing-mode: vertical-rl;
+
+    &__text
+    {
+      opacity: 0;
+    }
+  }
+}

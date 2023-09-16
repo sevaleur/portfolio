@@ -1,0 +1,22 @@
+extends ../base.pug
+
+block variables
+  - var template = 'home'
+
+block content
+  .home
+    .home__title
+      a.home__title__link(href='mailto:contact@sunevaleur.com')
+        h1.home__title__text=home.title
+    .home__sub
+      h2.home__sub__title=home.sub_title
+
+    .home__hook
+      h2.home__hook__title=home.hook
+
+    .home__idea
+      a.home__idea__link(href='mailto:contact@sunevaleur.com')
+        p.home__idea__text='got an idea?'
+
+    .home__construction
+      p.home__construction__text='under construction.'
